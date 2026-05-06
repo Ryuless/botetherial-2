@@ -1,0 +1,130 @@
+{
+  "human": [
+    {"name": "Citizen Blade Set", "description": "Setimbang untuk pemula kota.", "weapon": "Rusty Sword", "armor": "Leather Armor", "trinket": null, "backpack": "Traveler Pack"},
+    {"name": "Courier Edge Set", "description": "Ringan dan mobil untuk perjalanan cepat.", "weapon": "Iron Dagger", "armor": "Leather Armor", "trinket": null, "backpack": "Traveler Pack"},
+    {"name": "Militia Starter", "description": "Bekal standar penjaga gerbang.", "weapon": "Rusty Sword", "armor": "Shield Buckler", "trinket": null, "backpack": "Traveler Pack"},
+    {"name": "Guild Newblood", "description": "Paket pendatang baru guild.", "weapon": "Iron Dagger", "armor": "Leather Armor", "trinket": "Crystal Talisman", "backpack": "Traveler Pack"},
+    {"name": "Roadwarden Bundle", "description": "Set bertahan hidup lintas wilayah.", "weapon": "Rusty Sword", "armor": "Leather Armor", "trinket": null, "backpack": "Ranger Framepack"},
+    {"name": "Frontier Draft Kit", "description": "Rapi, efisien, dan siap patroli.", "weapon": "Iron Dagger", "armor": "Shield Buckler", "trinket": null, "backpack": "Traveler Pack"}
+  ],
+  "elf": [
+    {"name": "Moonleaf Initiate", "description": "Fokus akurasi dan ritme cepat.", "weapon": "Iron Dagger", "armor": "Leather Armor", "trinket": "Crystal Talisman", "backpack": "Traveler Pack"},
+    {"name": "Silverbow Echo", "description": "Set lincah untuk duel singkat.", "weapon": "Iron Dagger", "armor": "Leather Armor", "trinket": null, "backpack": "Traveler Pack"},
+    {"name": "Willow Guard", "description": "Tetap ringan tapi cukup tahan serang.", "weapon": "Rusty Sword", "armor": "Leather Armor", "trinket": "Crystal Talisman", "backpack": "Traveler Pack"},
+    {"name": "Dawnstride", "description": "Untuk pengintai dengan mobilitas tinggi.", "weapon": "Iron Dagger", "armor": "Leather Armor", "trinket": null, "backpack": "Ranger Framepack"},
+    {"name": "Starbark Relay", "description": "Perpaduan kelincahan dan kapasitas bawa.", "weapon": "Iron Dagger", "armor": "Shield Buckler", "trinket": null, "backpack": "Ranger Framepack"},
+    {"name": "Verdant Oath", "description": "Set mage-hybrid untuk kontrol tempo.", "weapon": "Rusty Sword", "armor": "Leather Armor", "trinket": "Crystal Talisman", "backpack": "Traveler Pack"}
+  ],
+  "dwarf": [
+    {"name": "Anvilspawn Kit", "description": "Tahan banting untuk pekerja tambang.", "weapon": "Rusty Sword", "armor": "Shield Buckler", "trinket": null, "backpack": "Ranger Framepack"},
+    {"name": "Forge Runner", "description": "Praktis untuk pembawa material.", "weapon": "Iron Dagger", "armor": "Leather Armor", "trinket": null, "backpack": "Ranger Framepack"},
+    {"name": "Ironhold Cadet", "description": "Pertahanan tebal untuk garis depan.", "weapon": "Rusty Sword", "armor": "Shield Buckler", "trinket": "Crystal Talisman", "backpack": "Ranger Framepack"},
+    {"name": "Bastion Smelter", "description": "Set stabil untuk ekspedisi berat.", "weapon": "Rusty Sword", "armor": "Leather Armor", "trinket": null, "backpack": "Aegis Expedition Pack"},
+    {"name": "Granite Relay", "description": "Kapasitas tinggi untuk loot dan ore.", "weapon": "Iron Dagger", "armor": "Shield Buckler", "trinket": null, "backpack": "Aegis Expedition Pack"},
+    {"name": "Rune Foundry", "description": "Seimbang untuk tempur dan craft.", "weapon": "Rusty Sword", "armor": "Leather Armor", "trinket": "Crystal Talisman", "backpack": "Ranger Framepack"}
+  ],
+  "orc": [
+    {"name": "Warhowl Basic", "description": "Serang cepat tanpa banyak kompromi.", "weapon": "Rusty Sword", "armor": "Leather Armor", "trinket": null, "backpack": "Traveler Pack"},
+    {"name": "Skullpath Rush", "description": "Set ringan untuk pressure awal.", "weapon": "Iron Dagger", "armor": "Leather Armor", "trinket": null, "backpack": "Traveler Pack"},
+    {"name": "Bloodridge Guard", "description": "Lebih tebal untuk duel panjang.", "weapon": "Rusty Sword", "armor": "Shield Buckler", "trinket": null, "backpack": "Traveler Pack"},
+    {"name": "Ravager March", "description": "Beban lebih besar, loot lebih banyak.", "weapon": "Rusty Sword", "armor": "Leather Armor", "trinket": "Crystal Talisman", "backpack": "Ranger Framepack"},
+    {"name": "Bonebanner", "description": "Set agresif dengan kontrol area.", "weapon": "Iron Dagger", "armor": "Shield Buckler", "trinket": null, "backpack": "Ranger Framepack"},
+    {"name": "Ashfang Vanguard", "description": "Paket serbu untuk frontline.", "weapon": "Rusty Sword", "armor": "Shield Buckler", "trinket": null, "backpack": "Aegis Expedition Pack"}
+  ],
+  "halfling": [
+    {"name": "Pocket Whisper", "description": "Mobilitas tinggi dan stealth.", "weapon": "Iron Dagger", "armor": "Leather Armor", "trinket": "Crystal Talisman", "backpack": "Traveler Pack"},
+    {"name": "Quickstep Parcel", "description": "Ringan untuk loot cepat.", "weapon": "Iron Dagger", "armor": "Leather Armor", "trinket": null, "backpack": "Traveler Pack"},
+    {"name": "Lantern Skip", "description": "Set aman untuk eksplorasi malam.", "weapon": "Rusty Sword", "armor": "Leather Armor", "trinket": null, "backpack": "Traveler Pack"},
+    {"name": "Needle Trail", "description": "Seimbang untuk battle singkat.", "weapon": "Iron Dagger", "armor": "Shield Buckler", "trinket": null, "backpack": "Traveler Pack"},
+    {"name": "Clover Relay", "description": "Maksimalkan kapasitas tanpa berat berlebih.", "weapon": "Iron Dagger", "armor": "Leather Armor", "trinket": "Crystal Talisman", "backpack": "Ranger Framepack"},
+    {"name": "Foxglove Kit", "description": "Paket lari, loot, dan sustain.", "weapon": "Rusty Sword", "armor": "Leather Armor", "trinket": null, "backpack": "Ranger Framepack"}
+  ],
+  "demon": [
+    {"name": "Ember Sigil", "description": "Campuran offense dan resonance magic.", "weapon": "Rusty Sword", "armor": "Leather Armor", "trinket": "Crystal Talisman", "backpack": "Traveler Pack"},
+    {"name": "Gloom Circuit", "description": "Kontrol tempo dengan biaya ringan.", "weapon": "Iron Dagger", "armor": "Leather Armor", "trinket": "Crystal Talisman", "backpack": "Traveler Pack"},
+    {"name": "Abyss Carrier", "description": "Lebih kapasitas untuk material ritual.", "weapon": "Rusty Sword", "armor": "Shield Buckler", "trinket": null, "backpack": "Ranger Framepack"},
+    {"name": "Hellglass Route", "description": "Set eksplorasi dengan fokus utility.", "weapon": "Iron Dagger", "armor": "Leather Armor", "trinket": null, "backpack": "Ranger Framepack"},
+    {"name": "Night Ember Core", "description": "Sustain dan kontrol durasi battle.", "weapon": "Rusty Sword", "armor": "Leather Armor", "trinket": "Crystal Talisman", "backpack": "Aegis Expedition Pack"},
+    {"name": "Cinder Mantle", "description": "Paket offense-defense paling stabil.", "weapon": "Rusty Sword", "armor": "Shield Buckler", "trinket": "Crystal Talisman", "backpack": "Ranger Framepack"}
+  ],
+  "vampire": [
+    {"name": "Bloodveil Initiate", "description": "Set duel malam dengan sustain halus.", "weapon": "Iron Dagger", "armor": "Leather Armor", "trinket": "Crystal Talisman", "backpack": "Traveler Pack"},
+    {"name": "Nocturne Fang", "description": "Serangan cepat dengan pertahanan cukup.", "weapon": "Rusty Sword", "armor": "Leather Armor", "trinket": null, "backpack": "Traveler Pack"},
+    {"name": "Crimson Escort", "description": "Paket seimbang untuk patroli kota malam.", "weapon": "Iron Dagger", "armor": "Shield Buckler", "trinket": null, "backpack": "Ranger Framepack"},
+    {"name": "Hemlock Relay", "description": "Maksimalkan loot tanpa hilang mobilitas.", "weapon": "Rusty Sword", "armor": "Leather Armor", "trinket": "Crystal Talisman", "backpack": "Ranger Framepack"},
+    {"name": "Mooncourt Vagrant", "description": "Set survival untuk ekspedisi panjang.", "weapon": "Rusty Sword", "armor": "Shield Buckler", "trinket": "Crystal Talisman", "backpack": "Aegis Expedition Pack"},
+    {"name": "Velvet Predation", "description": "Agresif, ringkas, dan stabil di PvE.", "weapon": "Iron Dagger", "armor": "Leather Armor", "trinket": "Crystal Talisman", "backpack": "Traveler Pack"}
+  ],
+  "dragontamer": [
+    {"name": "Scalebound Rookie", "description": "Set awal pengendali naga.", "weapon": "Rusty Sword", "armor": "Leather Armor", "trinket": null, "backpack": "Ranger Framepack"},
+    {"name": "Wing Tether", "description": "Lincah dengan ruang bawa memadai.", "weapon": "Iron Dagger", "armor": "Leather Armor", "trinket": "Crystal Talisman", "backpack": "Ranger Framepack"},
+    {"name": "Drake Handler", "description": "Fokus utility untuk companion support.", "weapon": "Iron Dagger", "armor": "Shield Buckler", "trinket": null, "backpack": "Ranger Framepack"},
+    {"name": "Cinder Reins", "description": "Set frontier untuk tugas guild.", "weapon": "Rusty Sword", "armor": "Shield Buckler", "trinket": null, "backpack": "Aegis Expedition Pack"},
+    {"name": "Roost Vanguard", "description": "Konfigurasi tempur-angkut serbaguna.", "weapon": "Rusty Sword", "armor": "Leather Armor", "trinket": "Crystal Talisman", "backpack": "Aegis Expedition Pack"},
+    {"name": "Skybond Courier", "description": "Ringan, cepat, dan efisien.", "weapon": "Iron Dagger", "armor": "Leather Armor", "trinket": null, "backpack": "Traveler Pack"}
+  ],
+  "fairy": [
+    {"name": "Dewlight Waltz", "description": "Support ringan dengan regen stabil.", "weapon": "Iron Dagger", "armor": "Leather Armor", "trinket": "Crystal Talisman", "backpack": "Traveler Pack"},
+    {"name": "Petal Spark", "description": "Lincah untuk eksplorasi dan scout.", "weapon": "Iron Dagger", "armor": "Leather Armor", "trinket": null, "backpack": "Traveler Pack"},
+    {"name": "Twinkle Aegis", "description": "Tambahan defense tanpa mengorbankan speed.", "weapon": "Rusty Sword", "armor": "Shield Buckler", "trinket": "Crystal Talisman", "backpack": "Traveler Pack"},
+    {"name": "Mosslane Escort", "description": "Paket utility harian petualang kecil.", "weapon": "Rusty Sword", "armor": "Leather Armor", "trinket": null, "backpack": "Ranger Framepack"},
+    {"name": "Prism Dust Trail", "description": "Build support untuk perjalanan jauh.", "weapon": "Iron Dagger", "armor": "Leather Armor", "trinket": "Crystal Talisman", "backpack": "Ranger Framepack"},
+    {"name": "Lullabee Route", "description": "Sustain dan carry lebih besar.", "weapon": "Iron Dagger", "armor": "Shield Buckler", "trinket": null, "backpack": "Aegis Expedition Pack"}
+  ],
+  "griffin": [
+    {"name": "Skyclaw Cadet", "description": "Power dan mobilitas udara seimbang.", "weapon": "Rusty Sword", "armor": "Leather Armor", "trinket": null, "backpack": "Traveler Pack"},
+    {"name": "Feathercrest Run", "description": "Serangan cepat untuk hunt singkat.", "weapon": "Iron Dagger", "armor": "Leather Armor", "trinket": null, "backpack": "Traveler Pack"},
+    {"name": "Talon Bastion", "description": "Fokus frontline dengan guard tebal.", "weapon": "Rusty Sword", "armor": "Shield Buckler", "trinket": null, "backpack": "Ranger Framepack"},
+    {"name": "Aerie Patrol", "description": "Set patroli perbatasan berkapasitas tinggi.", "weapon": "Iron Dagger", "armor": "Shield Buckler", "trinket": "Crystal Talisman", "backpack": "Ranger Framepack"},
+    {"name": "Windcrest Hauler", "description": "Muat loot lebih banyak untuk ekspedisi.", "weapon": "Rusty Sword", "armor": "Leather Armor", "trinket": "Crystal Talisman", "backpack": "Aegis Expedition Pack"},
+    {"name": "Sunspire Wingguard", "description": "Set stabil untuk party support.", "weapon": "Rusty Sword", "armor": "Shield Buckler", "trinket": null, "backpack": "Ranger Framepack"}
+  ],
+  "nymph": [
+    {"name": "Brookthread Charm", "description": "Build support-elemen untuk early game.", "weapon": "Iron Dagger", "armor": "Leather Armor", "trinket": "Crystal Talisman", "backpack": "Traveler Pack"},
+    {"name": "Canopy Whisper", "description": "Mobilitas tinggi dengan sustain aman.", "weapon": "Iron Dagger", "armor": "Leather Armor", "trinket": null, "backpack": "Traveler Pack"},
+    {"name": "Rootguard Harmony", "description": "Pertahanan dan utility seimbang.", "weapon": "Rusty Sword", "armor": "Shield Buckler", "trinket": "Crystal Talisman", "backpack": "Ranger Framepack"},
+    {"name": "Vinepath Relay", "description": "Paket mission gather dan collect.", "weapon": "Rusty Sword", "armor": "Leather Armor", "trinket": null, "backpack": "Ranger Framepack"},
+    {"name": "Torrent Sylph", "description": "Kontrol tempo battle menengah.", "weapon": "Iron Dagger", "armor": "Shield Buckler", "trinket": "Crystal Talisman", "backpack": "Aegis Expedition Pack"},
+    {"name": "Everglen Cart", "description": "Carry besar untuk alchemy route.", "weapon": "Rusty Sword", "armor": "Leather Armor", "trinket": "Crystal Talisman", "backpack": "Aegis Expedition Pack"}
+  ],
+  "werewolf": [
+    {"name": "Moonrush Scout", "description": "Agresif dengan burst cepat.", "weapon": "Iron Dagger", "armor": "Leather Armor", "trinket": null, "backpack": "Traveler Pack"},
+    {"name": "Howlguard Basic", "description": "Paket tempur awal yang aman.", "weapon": "Rusty Sword", "armor": "Leather Armor", "trinket": null, "backpack": "Traveler Pack"},
+    {"name": "Feral Bastion", "description": "Defense tebal untuk duel panjang.", "weapon": "Rusty Sword", "armor": "Shield Buckler", "trinket": null, "backpack": "Ranger Framepack"},
+    {"name": "Clawtrail Carrier", "description": "Kuat angkut tanpa drop tempo.", "weapon": "Iron Dagger", "armor": "Shield Buckler", "trinket": "Crystal Talisman", "backpack": "Ranger Framepack"},
+    {"name": "Nightpack Vanguard", "description": "Build berburu loot area luas.", "weapon": "Rusty Sword", "armor": "Leather Armor", "trinket": "Crystal Talisman", "backpack": "Aegis Expedition Pack"},
+    {"name": "Lunar Rampart", "description": "Frontline pack untuk party.", "weapon": "Rusty Sword", "armor": "Shield Buckler", "trinket": "Crystal Talisman", "backpack": "Aegis Expedition Pack"}
+  ],
+  "pegasus": [
+    {"name": "Windhoof Courier", "description": "Mobilitas tinggi dan aman untuk travel.", "weapon": "Iron Dagger", "armor": "Leather Armor", "trinket": null, "backpack": "Traveler Pack"},
+    {"name": "Cloudlane Rider", "description": "Set patroli ringan wilayah terbuka.", "weapon": "Rusty Sword", "armor": "Leather Armor", "trinket": null, "backpack": "Traveler Pack"},
+    {"name": "Airstream Guard", "description": "Defense menengah dengan utility baik.", "weapon": "Rusty Sword", "armor": "Shield Buckler", "trinket": "Crystal Talisman", "backpack": "Ranger Framepack"},
+    {"name": "Featherroute Pack", "description": "Muat lebih banyak untuk escort mission.", "weapon": "Iron Dagger", "armor": "Leather Armor", "trinket": "Crystal Talisman", "backpack": "Ranger Framepack"},
+    {"name": "Skybridge Haul", "description": "Ekspedisi panjang dengan kapasitas besar.", "weapon": "Rusty Sword", "armor": "Shield Buckler", "trinket": null, "backpack": "Aegis Expedition Pack"},
+    {"name": "Galecrest Standard", "description": "Set all-round untuk party support.", "weapon": "Iron Dagger", "armor": "Shield Buckler", "trinket": "Crystal Talisman", "backpack": "Ranger Framepack"}
+  ],
+  "mermaid": [
+    {"name": "Tideglass Set", "description": "Kontrol air ringan untuk pemula.", "weapon": "Iron Dagger", "armor": "Leather Armor", "trinket": "Crystal Talisman", "backpack": "Traveler Pack"},
+    {"name": "Coralstep Relay", "description": "Build lincah untuk route pesisir.", "weapon": "Iron Dagger", "armor": "Leather Armor", "trinket": null, "backpack": "Traveler Pack"},
+    {"name": "Brine Guard", "description": "Pertahanan stabil dengan sustain baik.", "weapon": "Rusty Sword", "armor": "Shield Buckler", "trinket": null, "backpack": "Ranger Framepack"},
+    {"name": "Pearl Caravan", "description": "Utility tinggi untuk collect mission.", "weapon": "Rusty Sword", "armor": "Leather Armor", "trinket": "Crystal Talisman", "backpack": "Ranger Framepack"},
+    {"name": "Abyss Marina", "description": "Set ekspedisi laut jarak jauh.", "weapon": "Iron Dagger", "armor": "Shield Buckler", "trinket": "Crystal Talisman", "backpack": "Aegis Expedition Pack"},
+    {"name": "Foamward Bastion", "description": "All-round untuk hunt dan support.", "weapon": "Rusty Sword", "armor": "Leather Armor", "trinket": null, "backpack": "Aegis Expedition Pack"}
+  ],
+  "angel": [
+    {"name": "Halo Initiate", "description": "Support suci untuk early adventure.", "weapon": "Rusty Sword", "armor": "Leather Armor", "trinket": "Crystal Talisman", "backpack": "Traveler Pack"},
+    {"name": "Aether Chorus", "description": "Lincah dan efisien untuk party roam.", "weapon": "Iron Dagger", "armor": "Leather Armor", "trinket": "Crystal Talisman", "backpack": "Traveler Pack"},
+    {"name": "Wardlight Guard", "description": "Set defensif untuk frontline support.", "weapon": "Rusty Sword", "armor": "Shield Buckler", "trinket": null, "backpack": "Ranger Framepack"},
+    {"name": "Sanctum Relay", "description": "Muat perlengkapan lebih banyak tanpa kehilangan stabilitas.", "weapon": "Iron Dagger", "armor": "Shield Buckler", "trinket": null, "backpack": "Ranger Framepack"},
+    {"name": "Seraph Hauler", "description": "Ekspedisi panjang dengan kapasitas maksimum.", "weapon": "Rusty Sword", "armor": "Leather Armor", "trinket": "Crystal Talisman", "backpack": "Aegis Expedition Pack"},
+    {"name": "Radiant Bastion", "description": "Konfigurasi party untuk sustain dan utility.", "weapon": "Rusty Sword", "armor": "Shield Buckler", "trinket": "Crystal Talisman", "backpack": "Aegis Expedition Pack"}
+  ],
+  "bunny": [
+    {"name": "Hopline Scout", "description": "Super ringan untuk mobilitas tinggi.", "weapon": "Iron Dagger", "armor": "Leather Armor", "trinket": null, "backpack": "Traveler Pack"},
+    {"name": "Lucky Burrow", "description": "Set farm loot dan eksplorasi cepat.", "weapon": "Iron Dagger", "armor": "Leather Armor", "trinket": "Crystal Talisman", "backpack": "Traveler Pack"},
+    {"name": "Thicket Guard", "description": "Defense ringan dengan tempo cepat.", "weapon": "Rusty Sword", "armor": "Shield Buckler", "trinket": null, "backpack": "Traveler Pack"},
+    {"name": "Clover Carrier", "description": "Kapasitas menengah untuk collect route.", "weapon": "Rusty Sword", "armor": "Leather Armor", "trinket": null, "backpack": "Ranger Framepack"},
+    {"name": "Lantern Hopper", "description": "Seimbang untuk battle dan delivery.", "weapon": "Iron Dagger", "armor": "Shield Buckler", "trinket": "Crystal Talisman", "backpack": "Ranger Framepack"},
+    {"name": "Briar Pouchmaster", "description": "Loadout bawa besar untuk grinding.", "weapon": "Rusty Sword", "armor": "Leather Armor", "trinket": "Crystal Talisman", "backpack": "Aegis Expedition Pack"}
+  ]
+}

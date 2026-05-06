@@ -1,0 +1,303 @@
+{
+  "Health Potion": {
+    "type": "consumable",
+    "category": "potion",
+    "heal": 35,
+    "mana": 0,
+    "price": 18,
+    "rarity": "common",
+    "description": "Ramuan merah hangat yang cepat menutup luka ringan."
+  },
+  "Stamina Tonic": {
+    "type": "consumable",
+    "category": "tonic",
+    "heal": 15,
+    "mana": 10,
+    "price": 22,
+    "rarity": "common",
+    "description": "Tonic pahit yang mengembalikan tenaga dan fokus."
+  },
+  "Mana Tonic": {
+    "type": "consumable",
+    "category": "tonic",
+    "heal": 0,
+    "mana": 25,
+    "price": 24,
+    "rarity": "common",
+    "description": "Cairan biru yang menenangkan aliran sihir."
+  },
+  "Antidote": {
+    "type": "consumable",
+    "category": "cure",
+    "heal": 8,
+    "mana": 0,
+    "price": 20,
+    "rarity": "common",
+    "description": "Penawar racun sederhana untuk perjalanan liar."
+  },
+  "Ration Pack": {
+    "type": "consumable",
+    "category": "food",
+    "heal": 20,
+    "mana": 0,
+    "price": 12,
+    "rarity": "common",
+    "description": "Bekal padat untuk perjalanan panjang."
+  },
+  "Torch": {
+    "type": "utility",
+    "category": "tool",
+    "price": 8,
+    "rarity": "common",
+    "weight": 0.5,
+    "description": "Obor untuk lorong gelap dan area berkabut."
+  },
+  "Rope": {
+    "type": "utility",
+    "category": "tool",
+    "price": 10,
+    "rarity": "common",
+    "weight": 1.2,
+    "description": "Tali serbaguna untuk menyeberang, memanjat, atau mengikat."
+  },
+  "Guild Sigil": {
+    "type": "quest",
+    "category": "badge",
+    "price": 0,
+    "rarity": "uncommon",
+    "description": "Lencana resmi Adventurer Guild untuk akses tugas tertentu."
+  },
+  "Rusty Sword": {
+    "type": "equipment",
+    "slot": "weapon",
+    "attack": 3,
+    "bonuses": {"attack": 3, "weight_limit": 30},
+    "price": 28,
+    "rarity": "common",
+    "weight": 2.8,
+    "description": "Pedang tua yang masih cukup tajam untuk petualang pemula."
+  },
+  "Iron Dagger": {
+    "type": "equipment",
+    "slot": "weapon",
+    "attack": 5,
+    "bonuses": {"attack": 5, "aspd": 2},
+    "price": 42,
+    "rarity": "common",
+    "weight": 1.1,
+    "description": "Pisau logam ringan untuk serangan cepat."
+  },
+  "Leather Armor": {
+    "type": "equipment",
+    "slot": "armor",
+    "defense": 3,
+    "bonuses": {"def": 3, "max_hp": 10},
+    "price": 46,
+    "rarity": "common",
+    "weight": 4.5,
+    "description": "Pelindung kulit fleksibel untuk menahan serangan dasar."
+  },
+  "Shield Buckler": {
+    "type": "equipment",
+    "slot": "armor",
+    "defense": 5,
+    "bonuses": {"def": 5, "weight_limit": 50},
+    "price": 55,
+    "rarity": "uncommon",
+    "weight": 3.7,
+    "description": "Perisai kecil yang mengarahkah pukulan dan panah."
+  },
+  "Crystal Talisman": {
+    "type": "equipment",
+    "slot": "trinket",
+    "defense": 1,
+    "attack": 1,
+    "bonuses": {"mdef": 2, "max_sp": 5},
+    "price": 60,
+    "rarity": "rare",
+    "weight": 0.4,
+    "description": "Jimat kristal yang memantulkan sisa energi magis."
+  },
+  "Traveler Pack": {
+    "type": "equipment",
+    "slot": "backpack",
+    "bonuses": {"weight_limit": 80},
+    "price": 40,
+    "rarity": "common",
+    "weight": 1.8,
+    "description": "Tas kain standar dengan ruang tambahan untuk perlengkapan perjalanan."
+  },
+  "Ranger Framepack": {
+    "type": "equipment",
+    "slot": "backpack",
+    "bonuses": {"weight_limit": 140},
+    "price": 85,
+    "rarity": "uncommon",
+    "weight": 2.4,
+    "description": "Backpack bertulang ringan yang menambah kapasitas bawa secara signifikan."
+  },
+  "Aegis Expedition Pack": {
+    "type": "equipment",
+    "slot": "backpack",
+    "bonuses": {"weight_limit": 220},
+    "price": 150,
+    "rarity": "rare",
+    "weight": 3.0,
+    "description": "Paket ekspedisi premium dengan kompartemen berlapis dan distribusi beban stabil."
+  },
+  "Spirit Herb": {
+    "type": "material",
+    "category": "herb",
+    "price": 6,
+    "rarity": "common",
+    "description": "Herba tipis yang sering dipakai alkemis."
+  },
+  "Iron Ore": {
+    "type": "material",
+    "category": "metal",
+    "price": 9,
+    "rarity": "common",
+    "weight": 3.0,
+    "description": "Biji logam mentah untuk ditempa oleh blacksmith."
+  },
+  "Monster Bone": {
+    "type": "material",
+    "category": "bone",
+    "price": 11,
+    "rarity": "common",
+    "weight": 2.4,
+    "description": "Tulang keras yang sering dipakai untuk upgrade perlengkapan."
+  },
+  "Leather Pelt": {
+    "type": "material",
+    "category": "hide",
+    "price": 10,
+    "rarity": "common",
+    "weight": 1.8,
+    "description": "Kulit binatang liar yang masih layak untuk armor dasar."
+  },
+  "Wisp Core": {
+    "type": "material",
+    "category": "arcane",
+    "price": 14,
+    "rarity": "uncommon",
+    "weight": 0.2,
+    "description": "Inti cahaya kecil yang menyimpan sisa energi spiritual."
+  },
+  "Wolf Fang": {
+    "type": "material",
+    "category": "tooth",
+    "price": 8,
+    "rarity": "common",
+    "weight": 0.3,
+    "description": "Taring tajam dari predator liar."
+  },
+  "Bone Shard": {
+    "type": "material",
+    "category": "bone",
+    "price": 7,
+    "rarity": "common",
+    "weight": 0.5,
+    "description": "Pecahan tulang yang masih menyimpan aura keras."
+  },
+  "Scale": {
+    "type": "material",
+    "category": "scale",
+    "price": 16,
+    "rarity": "uncommon",
+    "weight": 1.0,
+    "description": "Sisik makhluk purba yang keras dan berkilau."
+  },
+  "Dragon Claw": {
+    "type": "material",
+    "category": "claw",
+    "price": 22,
+    "rarity": "rare",
+    "weight": 1.6,
+    "description": "Cakar naga kecil dengan sisa panas sihir."
+  },
+  "Shadow Cloth": {
+    "type": "material",
+    "category": "cloth",
+    "price": 18,
+    "rarity": "uncommon",
+    "weight": 0.8,
+    "description": "Kain gelap yang menyerap cahaya sekitar."
+  },
+  "Night Gem": {
+    "type": "material",
+    "category": "gem",
+    "price": 24,
+    "rarity": "rare",
+    "weight": 0.2,
+    "description": "Batu malam yang memantulkan bisikan bayangan."
+  },
+  "Coin Pouch": {
+    "type": "material",
+    "category": "trade",
+    "price": 6,
+    "rarity": "common",
+    "weight": 0.7,
+    "description": "Kantung koin yang sering diburu pencuri kecil."
+  },
+  "Salted Coin": {
+    "type": "material",
+    "category": "trade",
+    "price": 9,
+    "rarity": "common",
+    "weight": 0.7,
+    "description": "Koin tua yang mengering bersama garam laut."
+  },
+  "Torn Sail": {
+    "type": "material",
+    "category": "cloth",
+    "price": 7,
+    "rarity": "common",
+    "weight": 1.4,
+    "description": "Potongan layar kapal yang masih membawa aroma laut."
+  },
+  "Crab Shell": {
+    "type": "material",
+    "category": "shell",
+    "price": 12,
+    "rarity": "common",
+    "weight": 2.1,
+    "description": "Cangkang keras dari kepiting raksasa."
+  },
+  "Pearl Fragment": {
+    "type": "material",
+    "category": "pearl",
+    "price": 18,
+    "rarity": "uncommon",
+    "weight": 0.4,
+    "description": "Serpihan mutiara yang masih memancarkan kilau halus."
+  },
+  "Iron Ingot": {
+    "type": "material",
+    "category": "metal",
+    "price": 16,
+    "rarity": "common",
+    "description": "Batangan besi siap ditempa menjadi gear."
+  },
+  "Moon Salt": {
+    "type": "material",
+    "category": "alchemy",
+    "price": 14,
+    "rarity": "uncommon",
+    "description": "Garam bercahaya yang disukai resep alkimia."
+  },
+  "Ancient Relic": {
+    "type": "quest",
+    "category": "relic",
+    "price": 0,
+    "rarity": "rare",
+    "description": "Peninggalan kuno yang sering memicu quest penting."
+  },
+  "Fae Dust": {
+    "type": "material",
+    "category": "arcane",
+    "price": 13,
+    "rarity": "uncommon",
+    "description": "Debu peri yang berkilau lembut di tanganmu."
+  }
+}

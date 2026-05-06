@@ -1,0 +1,21 @@
+{
+  "Hutan Berbisik": [
+    {"name":"Wisp Terang","hp":30,"atk":6,"loot":["Glow Mushroom","Wisp Core"]},
+    {"name":"Serigala Bayang","hp":45,"atk":10,"loot":["Wolf Fang","Leather Pelt"]}
+  ],
+  "Ngarai Tulang": [
+    {"name":"Kerangka Prajurit","hp":60,"atk":12,"loot":["Bone Shard","Rusty Sword"]},
+    {"name":"Lurker Naga Kecil","hp":90,"atk":18,"loot":["Scale","Dragon Claw"]}
+  ],
+  "Pasar Malam Gelap": [
+    {"name":"Penjaga Bayangan","hp":50,"atk":14,"loot":["Shadow Cloth","Night Gem"]},
+    {"name":"Pedagang Ilegal","hp":35,"atk":8,"loot":["Strange Trinket","Coin Pouch"]}
+  ],
+  "Pesisir Berbisik": [
+    {"name":"Hantu Pelaut","hp":55,"atk":11,"loot":["Salted Coin","Torn Sail"]},
+    {"name":"Kepiting Raksasa","hp":70,"atk":13,"loot":["Crab Shell","Pearl Fragment"]}
+  ],
+  "Kota Utama": [
+    {"name":"Pickpocket","hp":25,"atk":5,"loot":["Purse","Lockpick"]}
+  ]
+}
