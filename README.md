@@ -145,24 +145,24 @@ botetherial/
 ├── db.py                           # Database operations (Firebase)
 ├── stats.py                        # Character stats calculations
 ├── check_users.py                  # User validation utilities
-├── config.json                     # Bot configuration (not in git)
+├── README.md                       # Main documentation
+├── docs/                           # Deployment and setup docs
+├── data/                           # Game data
 ├── config.example.json             # Configuration template
 ├── requirements.txt                # Python dependencies
 ├── discloud.config                 # Discloud deployment config
+├── Dockerfile                      # Docker image
+├── docker-compose.yml              # Docker compose
 ├── .env.example                    # Environment variables template
 ├── .gitignore                      # Git ignore rules
-├── README.md                       # This file
-├── data/                           # Game data
-│   ├── map.json                   # World map
-│   ├── monsters.json              # Monster definitions
-│   ├── items.json                 # Item catalog
-│   ├── recipes.json               # Crafting recipes
-│   └── world_events.json          # World events
+├── .github/                        # GitHub Actions workflows
 ├── races.json                      # Race definitions
 ├── jobs.json                       # Job definitions
-├── starter_kits.json              # Starter kit definitions
-└── .venv/                         # Virtual environment (not in git)
+├── starter_kits.json               # Starter kit definitions
+└── .venv/                          # Virtual environment (not in git)
 ```
+
+Dokumentasi detail dipindahkan ke [docs/DEPLOYMENT.md](docs/DEPLOYMENT.md), [docs/QUICKSTART.md](docs/QUICKSTART.md), [docs/CONFIGURATION.md](docs/CONFIGURATION.md), dan [docs/DEPLOYMENT_CHECKLIST.md](docs/DEPLOYMENT_CHECKLIST.md).
 
 ## Deployment 🚀
 

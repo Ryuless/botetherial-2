@@ -165,8 +165,11 @@ docker-compose up
 ```
 botetherial/
 ├── 📄 README.md                    # Main documentation
-├── 📄 DEPLOYMENT.md                # Deployment guide
-├── 📄 QUICKSTART.md                # Quick start guide
+├── 📄 docs/
+│   ├── DEPLOYMENT.md               # Deployment guide
+│   ├── QUICKSTART.md               # Quick start guide
+│   ├── CONFIGURATION.md            # Configuration summary
+│   └── DEPLOYMENT_CHECKLIST.md     # Pre-deployment checklist
 ├── 📄 requirements.txt             # Python dependencies
 │
 ├── 🔐 Secrets (NOT COMMITTED)
@@ -219,7 +222,7 @@ botetherial/
    ```
 
 2. **Deploy to Discloud:**
-   - Follow DEPLOYMENT.md
+  - Follow DEPLOYMENT.md
    - Set environment variables
    - Click Deploy
 

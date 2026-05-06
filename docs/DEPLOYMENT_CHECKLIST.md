@@ -190,7 +190,7 @@ If issues persist:
 1. Check [DEPLOYMENT.md](DEPLOYMENT.md) for detailed troubleshooting
 2. Check Discloud logs in dashboard
 3. Check GitHub Actions workflows
-4. Consult [README.md](README.md) documentation
+4. Consult [README.md](../README.md) documentation
 
 ---
 
@@ -198,4 +198,3 @@ If issues persist:
 **Deployed Version:** _______________
 **Discloud Bot ID:** _______________
 **Notes:** _______________________________________________
-
