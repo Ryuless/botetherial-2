@@ -40,18 +40,9 @@ Bot ini sempurna untuk:
 ## ✨ Fitur Utama
 
 ### 🧬 Sistem Karakter
-- **7 Ras berbeda**: Elf, Dwarf, Demon, Human, Halfling, Tiefling, Dragonborn
-- **8 Kelas/Job**: Warrior, Archer, Mage, Rogue, Cleric, Paladin, Bard, Blacksmith
-- **Stat System**: STR, AGI, VIT, INT, DEX, LUK, TEC, MEN, CRT
-- **Pertumbuhan Karakter**: Leveling, EXP, Skill Points allocation
-- **Derived Stats**: ATK, MATK, DEF, MDEF, HP, MP, CRIT chance
+**15 Ras berbeda**: Human, Elf, Orc, Dwarf, Vampire, Dragontamer, Fairy, Griffin, Nymph, Werewolf, Pegasus, Mermaid, Angel, Demon, Bunny
+**10 Kelas/Job**: Archer, Warrior, Rogue, Poet, Oracle, Witch, Hunter, Alchemist, Blacksmith, Jobless
 
-### ⚔️ Sistem Pertarungan
-- **Turn-based Combat**: Pemain vs Monster
-- **Skill System**: Berbagai skill berdasarkan kelas
-- **Item Usage**: Potions, buffs, dan consumables
-- **Loot System**: Turun dari monster yang dikalahkan
-- **Status Effects**: Poison, Burn, Freeze, dan status lainnya
 - **Critical Hit**: Perhitungan kerusakan kritis berdasarkan stat
 
 ### 🗺️ Sistem Eksplorasi
@@ -307,57 +298,56 @@ Setiap ras punya bonus stat unik:
 Setiap kelas punya specialty dan stat growth:
 
 - **Warrior** - Damage tinggi, DEF tinggi
-- **Archer** - Cepat, AGI tinggi, CRIT tinggi
-- **Mage** - MATK tinggi, INT tinggi
-- **Rogue** - Sangat cepat, CRIT tinggi
-- **Cleric** - Healing, MDEF tinggi
-- **Paladin** - Tanker, DEF & MDEF tinggi
-- **Bard** - Support, WIS tinggi
-- **Blacksmith** - Crafting, TEC tinggi
 
 ### Leveling System 📊
 
 - **Base Level**: Mulai dari 1
 - **EXP System**: Setiap kemenangan & quest beri EXP
-- **Level Cap**: 255 (dapat disesuaikan)
-- **Stat Points**: +5 setiap level untuk dialokasikan
-- **Skills**: Unlock berdasarkan level & job
-
-### Reputasi & Faction 🏆
-
-Tiga faction utama:
-- **Kingdom** - Pemerintah & order
 - **Merchant Guild** - Perdagangan & bisnis
+### Ras (Races) 🧬
 - **Dark Society** - Underground & quest tersembunyi
+Tersedia **15 ras berbeda**, masing-masing dengan bonus stat unik dan special trait:
 
+| Ras | Keunggulan | Special Trait |
+|-----|-----------|---------------|
+| **Human** | Balanced, versatile | Adaptable - +5% semua resistansi |
+| **Elf** | AGI, DEX tinggi | Grace - DEX +15%, loot rate +10% |
+| **Orc** | STR, VIT tinggi | Warlord - ATK +15% saat HP penuh |
+| **Dwarf** | VIT, TEC tinggi | Ironbody - DEF +20% untuk stone skin |
+| **Vampire** | INT, CRT tinggi | Nightborn - Vampirism +25%, regen saat gelap |
+| **Dragontamer** | STR, INT | Dragon Bond - Dapat ride naga, damage +20% |
+| **Fairy** | AGI, MEN tinggi | Pixie Magic - MATK +15%, SP cost -20% |
+| **Griffin** | STR, VIT | Sky Guardian - dapat terbang, DEF +10% udara |
+| **Nymph** | INT, MEN | Nature's Child - nature magic +20%, heal +10% |
+| **Werewolf** | AGI, STR | Beast Form - dapat transform, ATK +25% malam |
+| **Pegasus** | AGI, VIT | Celestial Speed - ASPD +20%, dapat terbang |
+| **Mermaid** | INT, MEN | Water Bond - underwater breathing, MDEF +15% |
+| **Angel** | INT, VIT | Holy Light - healing +20%, undead damage +30% |
+| **Demon** | INT, CRT | Dark Power - dark magic +25%, curse resistance |
+| **Bunny** | AGI, LUK | Lucky Hopper - CRIT +18%, loot rate +20% |
 Naik reputasi dengan menyelesaikan quest & membeli dari merchant.
+### Kelas (Jobs) ⚔️
 
+Tersedia **10 kelas/job berbeda**, dengan stat growth dan skill unik:
 ### Achievement 🏅
+| Kelas | Role | Special Ability | Initial Skills |
+|-------|------|-----------------|-----------------|
+| **Archer** | DPS Ranged | Multi-shot attacks | Double Shot, Arrow Shower |
+| **Warrior** | Tank/DPS | Shield Wall defense | Bash, Power Attack |
+| **Rogue** | DPS Assassin | Backstab crit dmg | Quick Strike, Evasion |
+| **Poet** | Support Buff | Inspiring verses | Inspiring Song, Healing Melody |
+| **Oracle** | Support Divination | Foresight prediction | Divine Light, Prophecy |
+| **Witch** | Control/Debuff | Hexing enemies | Curse, Hex Nail |
+| **Hunter** | Tracker/Traps | Trap Master system | Lay Trap, Headshot |
+| **Alchemist** | Crafter/Support | Potion Mastery | Create Potion, Potion Throw |
+| **Blacksmith** | Crafter/Tank | Forge Master equipment | Forge, Weaponry |
+| **Jobless** | Flexible/Hybrid | Freeform building | Basic Attack, Item Use |
 
-Achievement categories:
 - **Combat**: Victory, Boss Kill, Streak
-- **Exploration**: Discovery, Locales
 - **Progression**: Level milestones
-- **Social**: Party formation, Recruitment
-- **Collection**: Items, Monsters
-
-## 📁 Struktur Proyek
-
-```
-botetherial/
 ├── src/
-│   ├── bot.js                    # Discord.js runtime & command handlers
 │   ├── index.js                  # Entry point
-│   ├── db.js                     # Firestore + fallback storage
 │   ├── stats.js                  # Sistem statistik karakter
-│   ├── game-core.js              # Core game logic & helpers
-│   ├── command-data.js           # Command payload builders
-│   ├── presentation.js           # Discord embed builders
-│   ├── check_users.js            # User validation
-│   └── test_stats.js             # Validation tests
-├── data/
-│   ├── items.json                # Item definitions
-│   ├── map.json                  # World map layout
 │   ├── monsters.json             # Monster definitions
 │   ├── recipes.json              # Crafting recipes
 │   └── world_events.json         # World events (opsional)
