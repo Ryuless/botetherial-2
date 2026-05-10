@@ -1,6 +1,0 @@
-{
-  "token": "YOUR_DISCORD_BOT_TOKEN_HERE",
-  "prefix": "!",
-  "firebase_database_url": "https://your-project-default-rtdb.region.firebasedatabase.app/",
-  "firebase_service_account": "./etherial-fantasy-firebase-adminsdk-fbsvc-xxxxxxxxxxxxxxxx.json"
-}

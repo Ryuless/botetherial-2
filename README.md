@@ -21,9 +21,10 @@ A comprehensive Discord roleplay bot for the Etherial fantasy world. Features in
 ## Quick Start 🚀
 
 ### Prerequisites
-- Python 3.8+
+- Node.js 18.0+
+- npm 9.0+
 - Discord Bot Token
-- Firebase Realtime Database credentials
+- Firebase service account credentials
 
 ### Local Setup
 
@@ -33,42 +34,32 @@ git clone https://github.com/yourusername/botetherial.git
 cd botetherial
 ```
 
-2. **Create virtual environment**
+2. **Install dependencies**
 ```bash
-# Linux/macOS
-python -m venv .venv
-source .venv/bin/activate
-
-# Windows PowerShell
-python -m venv .venv
-.\.venv\Scripts\Activate.ps1
+npm install
 ```
 
-3. **Install dependencies**
+3. **Configure the bot**
 ```bash
-pip install -r requirements.txt
+# Edit config.json with your settings
+# Set DISCORD_BOT_TOKEN in environment or config.json
 ```
 
-4. **Configure the bot**
-```bash
-# Copy config template
-cp config.example.json config.json
+4. **Set up Firebase credentials**
+- Download Firebase service account JSON
+- Place it as `etherial-fantasy-firebase-adminsdk-fbsvc-*.json` in project root
+- Or set `GOOGLE_APPLICATION_CREDENTIALS` environment variable
 
-# Copy environment template
-cp .env.example .env
+5. **Run the bot**
+```bash
+# Development
+npm start
+
+# Or directly
+node src/index.js
 ```
 
-5. **Set up configuration**
-- Edit `config.json` with your Discord bot token and Firebase credentials
-- Or set environment variables in `.env`
-- Download Firebase service account JSON and place it in the project root
-
-6. **Run the bot**
-```bash
-python bot.py
-```
-
-The bot should output: `Bot ready as EtherialFantasy#XXXX — prefix=!`
+The bot should output when Discord is available: `Bot ready as EtherialFantasy#XXXX — prefix=!`
 
 ## Configuration 📋
 
@@ -76,19 +67,17 @@ The bot should output: `Bot ready as EtherialFantasy#XXXX — prefix=!`
 ```json
 {
   "token": "YOUR_DISCORD_BOT_TOKEN",
-  "prefix": "!",
-  "firebase_database_url": "https://your-project-default-rtdb.region.firebasedatabase.app/",
-  "firebase_service_account": "./etherial-fantasy-firebase-adminsdk.json"
+  "prefix": "!"
 }
 ```
 
 ### Environment Variables (.env)
 ```
 DISCORD_BOT_TOKEN=your_token
-BOT_PREFIX=!
-FIREBASE_DATABASE_URL=https://your-project.firebasedatabase.app/
-FIREBASE_SERVICE_ACCOUNT_PATH=./service-account.json
+GOOGLE_APPLICATION_CREDENTIALS=./etherial-fantasy-firebase-adminsdk-fbsvc-*.json
 ```
+
+The bot uses **Firestore** for data persistence with automatic in-memory fallback when Firebase is unavailable.
 
 ## Discord Commands 🎮
 
@@ -141,89 +130,84 @@ FIREBASE_SERVICE_ACCOUNT_PATH=./service-account.json
 
 ```
 botetherial/
-├── bot.py                          # Main bot file
-├── db.py                           # Database operations (Firebase)
-├── stats.py                        # Character stats calculations
-├── check_users.py                  # User validation utilities
-├── README.md                       # Main documentation
-├── docs/                           # Deployment and setup docs
-├── data/                           # Game data
-├── config.example.json             # Configuration template
-├── requirements.txt                # Python dependencies
-├── discloud.config                 # Discloud deployment config
-├── Dockerfile                      # Docker image
-├── docker-compose.yml              # Docker compose
-├── .env.example                    # Environment variables template
-├── .gitignore                      # Git ignore rules
-├── .github/                        # GitHub Actions workflows
+├── src/
+│   ├── bot.js                      # Discord.js bot runtime
+│   ├── index.js                    # Entry point
+│   ├── db.js                       # Firestore operations with fallback
+│   ├── stats.js                    # Character stat calculations
+│   ├── game-core.js                # Core game logic (catalogs, sessions, quests)
+│   ├── command-data.js             # Command payload builders
+│   ├── presentation.js             # Discord embed builders
+│   ├── check_users.js              # User validation
+│   └── test_stats.js               # Stats validation tests
+├── data/                           # Game data files
+│   ├── items.json                  # Item definitions
+│   ├── map.json                    # World map layout
+│   ├── monsters.json               # Monster definitions
+│   ├── recipes.json                # Crafting recipes
+│   ├── world_events.json           # World events
+│   └── ...
+├── config.json                     # Bot configuration
+├── package.json                    # Node.js dependencies
+├── etherial-fantasy-firebase-adminsdk-fbsvc-*.json  # Firebase credentials (not in git)
 ├── races.json                      # Race definitions
 ├── jobs.json                       # Job definitions
 ├── starter_kits.json               # Starter kit definitions
-└── .venv/                          # Virtual environment (not in git)
+└── .gitignore                      # Git ignore rules
 ```
-
-Dokumentasi detail dipindahkan ke [docs/DEPLOYMENT.md](docs/DEPLOYMENT.md), [docs/QUICKSTART.md](docs/QUICKSTART.md), [docs/CONFIGURATION.md](docs/CONFIGURATION.md), dan [docs/DEPLOYMENT_CHECKLIST.md](docs/DEPLOYMENT_CHECKLIST.md).
 
 ## Deployment 🚀
 
-### Deploy to Discloud
+### Deploy to Node.js Hosting
 
-Discloud is a hosting service designed for Discord bots.
+The bot can be deployed to any Node.js hosting platform:
 
-1. **Create Discloud Account**
-   - Go to https://discloud.app
-   - Sign up with your Discord account
+- **Railway.app** - Easy deployment with GitHub integration
+- **Render.com** - Free tier available
+- **Fly.io** - Global deployment
+- **Heroku** - Using Procfile (not free anymore)
+- **VPS (AWS, DigitalOcean, Linode)** - Full control
+- **Replit** - Node.js runtime support
 
-2. **Prepare Your Bot**
-   - Ensure `discloud.config` exists
-   - Ensure `requirements.txt` has all dependencies
-   - Ensure `.gitignore` excludes sensitive files
+### General Deployment Steps
 
-3. **Upload to Discloud**
-   - Create a `.zip` file with your project:
-     ```bash
-     # Windows
-     Compress-Archive -Path . -DestinationPath botetherial.zip -Exclude .venv, __pycache__
-     
-     # Linux/macOS
-     zip -r botetherial.zip . -x ".venv/*" "__pycache__/*" "*.pyc"
-     ```
-   - Or use Discloud's GitHub integration (recommended)
+1. **Prepare project**
+   - Ensure `package.json` and all files are committed
+   - Exclude `.env`, `node_modules`, and Firebase credentials from git
+   - Verify `.gitignore` is correct
 
-4. **Environment Variables on Discloud**
-   - Set these in the Discloud dashboard:
-     ```
-     DISCORD_BOT_TOKEN=your_token
-     FIREBASE_DATABASE_URL=your_firebase_url
-     ```
+2. **Set environment variables** on your hosting platform:
+   ```
+   DISCORD_BOT_TOKEN=your_token
+   GOOGLE_APPLICATION_CREDENTIALS=/path/to/firebase-adminsdk.json
+   ```
 
-5. **Deploy**
-   - Upload the zip file or connect your GitHub repo
-   - Click deploy/start
-   - Monitor logs in Discloud dashboard
+3. **Install and run**
+   ```bash
+   npm install
+   npm start
+   ```
 
-### Deploy to Other Platforms
-
-The bot can also be deployed to:
-- **Heroku** (free tier removed as of Nov 2022)
-- **Railway.app** - See railway.app for setup
-- **Replit** - See replit.com for Python setup
-- **VPS (AWS, DigitalOcean, Linode)** - Standard Python deployment
+4. **Firebase credentials**
+   - Upload your Firebase service account JSON to the hosting platform
+   - Or use the platform's secrets/environment management
 
 ## Development 💻
 
 ### Adding New Features
 
-1. Create new command in `bot.py`
-2. Update game data in `data/` if needed
-3. Test locally with `python bot.py`
-4. Update `README.md` with new commands
-5. Commit and push to GitHub
+1. Create new command handler in `src/bot.js`
+2. Add payload builder in `src/command-data.js` if needed
+3. Update game data in `data/` JSON files if needed
+4. Test locally with `npm start` or `node src/index.js`
+5. Update `README.md` with new commands
+6. Commit and push to GitHub
 
 ### Code Style
-- Follow PEP 8 guidelines
-- Use type hints where possible
-- Add docstrings for functions
+- Follow JavaScript conventions (consistent indentation, descriptive names)
+- Use async/await for async operations
+- Add JSDoc comments for functions
+- Test changes before committing
 
 ## Firebase Setup 🔥
 
@@ -231,37 +215,49 @@ The bot can also be deployed to:
    - Go to https://console.firebase.google.com
    - Create a new project
 
-2. **Generate Service Account Key**
-   - Go to Project Settings → Service Accounts
-   - Click "Generate New Private Key"
-   - Save as `etherial-fantasy-firebase-adminsdk.json`
-   - Add to `.gitignore`
-
-3. **Enable Firestore Database**
-   - Create a Realtime Database
+2. **Enable Firestore Database**
+   - Create a Firestore Database
    - Set security rules (or use development mode for testing)
 
+3. **Generate Service Account Key**
+   - Go to Project Settings → Service Accounts
+   - Click "Generate New Private Key"
+   - Save as `etherial-fantasy-firebase-adminsdk-fbsvc-*.json`
+   - **IMPORTANT**: Add to `.gitignore` (never commit credentials)
+
 4. **Update Configuration**
-   - Copy the database URL to `config.json`
-   - Place service account JSON in project root
+   - Set `GOOGLE_APPLICATION_CREDENTIALS` to path of service account JSON
+   - Or place file in project root and let app auto-detect it
+
+5. **Fallback Mode**
+   - Bot works without Firebase (uses in-memory storage)
+   - Data persists locally only during session
+   - Add Firebase credentials to enable persistent storage
 
 ## Troubleshooting 🔧
 
 ### Bot won't start
-- Check if bot token is valid
-- Ensure all dependencies are installed: `pip install -r requirements.txt`
-- Check `config.json` format
-- Verify Python version: `python --version`
+- Check if bot token is valid in `config.json`
+- Ensure all dependencies are installed: `npm install`
+- Check `config.json` format is valid JSON
+- Verify Node.js version: `node --version` (need 18.0+)
+- Check for errors: `npm start` (shows detailed error messages)
 
 ### Firebase connection fails
-- Check service account JSON is in correct location
-- Verify Firebase database URL is correct
+- Check service account JSON is accessible
+- Verify Firestore database exists in Firebase project
 - Check internet connection
+- Bot will work in fallback mode without Firebase (data lost on restart)
 
 ### Commands not working
-- Ensure bot has Message Content Intent enabled
-- Check bot permissions in Discord server
-- Verify command prefix is correct
+- Ensure bot has Message Content Intent enabled in Discord Developer Portal
+- Check bot permissions in Discord server settings
+- Verify command prefix is correct (default: `!`)
+- Ensure bot has permission to send messages
+
+### Discord.js not available
+- Install discord.js: `npm install discord.js`
+- Or check console output for fallback mode notice
 
 ### Skills are limited
 - This is intentional! Characters get 1-3 random starting skills
@@ -286,11 +282,16 @@ This project is open source. Please ensure Firebase credentials are never commit
 
 ## Credits ✨
 
-- Built with [discord.py](https://discordpy.readthedocs.io/)
-- Data persistence with [Firebase Admin SDK](https://firebase.google.com/docs/database)
-- Hosted on [Discloud](https://discloud.app)
+- Built with [discord.js](https://discord.js.org/)
+- Data persistence with [Firebase Admin SDK](https://firebase.google.com/docs/firestore)
+- Game design and content for Etherial Fantasy RPG
 
 ---
 
-**Note**: Remember to never commit `config.json` or Firebase service account files. Use `config.example.json` as a template for new deployments.
+**Important Security Notes:**
+- Never commit `config.json` with real bot tokens
+- Never commit Firebase service account JSON files
+- Always use `.gitignore` to protect sensitive credentials
+- Use environment variables or secure secret management for production
+- Rotate bot tokens if accidentally exposed
 
