@@ -1,297 +1,677 @@
-# Etherial Fantasy - Discord RP Bot 🎭
+# Etherial Fantasy - Bot Discord RPG 🎭
 
-A comprehensive Discord roleplay bot for the Etherial fantasy world. Features include character creation, exploration, monster encounters, battles, quests, inventory management, and world state persistence using Firebase.
+Bot Discord RPG (Role-Playing Game) yang komprehensif untuk dunia fantasi Etherial. Bot ini dirancang untuk memberikan pengalaman bermain RPG yang mendalam dengan sistem karakter, pertarungan, quest, dan banyak fitur menarik lainnya.
 
-## Features ✨
+## 📖 Daftar Isi
 
-- **Character Creation & Management** - Create characters with different races and jobs
-- **Exploration System** - Travel between locations and discover encounters
-- **Battle System** - Turn-based combat with skills and items
-- **Quest System** - Quest board with rewards and progression
-- **Inventory & Shop** - Manage items and equipment
-- **Party System** - Form parties with other players
-- **Companion Recruitment** - Recruit NPCs to accompany you
-- **Story Events** - Personalized events based on race, job, and location
-- **World State** - Dynamic world that changes based on player actions
-- **Reputation System** - Track faction reputation
-- **Achievements** - Unlock achievements through gameplay
-- **Skill Gacha** - Random starting skills (1-3 initial skills)
-- **Firebase Integration** - Persistent data storage
+- [Kegunaan Bot](#kegunaan-bot)
+- [Fitur Utama](#fitur-utama)
+- [Prasyarat](#prasyarat)
+- [Instalasi](#instalasi)
+- [Konfigurasi](#konfigurasi)
+- [Menjalankan Bot](#menjalankan-bot)
+- [Perintah Bot](#perintah-bot)
+- [Sistem Permainan](#sistem-permainan)
+- [Struktur Proyek](#struktur-proyek)
+- [Setup Firebase](#setup-firebase)
+- [Deployment](#deployment)
+- [Troubleshooting](#troubleshooting)
+- [Berkontribusi](#berkontribusi)
 
-## Quick Start 🚀
+## 🎮 Kegunaan Bot
 
-### Prerequisites
-- Node.js 18.0+
-- npm 9.0+
-- Discord Bot Token
-- Firebase service account credentials
+**Etherial Fantasy** adalah bot Discord yang menyediakan pengalaman RPG interaktif penuh di dalam Discord. Bot ini memungkinkan pemain untuk:
 
-### Local Setup
+- **Membuat dan mengelola karakter** dengan berbagai ras dan kelas
+- **Menjelajahi dunia fantasi** dengan 44+ lokasi unik
+- **Bertarung melawan monster** dalam sistem pertarungan berbasis giliran
+- **Menyelesaikan quest** dari papan misi di Guild
+- **Mengelola inventory** dengan sistem bobot dan penyimpanan
+- **Membentuk party** bersama pemain lain
+- **Merekrut companion** untuk menemani petualangan
+- **Mengumpulkan achievement** dan reputasi
+- **Mengalami story events** yang dipersonalisasi berdasarkan ras, kelas, dan lokasi
 
-1. **Clone the repository**
+Bot ini sempurna untuk:
+- **Komunitas Discord gaming** yang ingin fitur RPG interaktif
+- **Roleplay server** yang membutuhkan sistem karakter terstruktur
+- **Pembelajaran bahasa pemrograman** (arsitektur bot yang well-structured)
+
+## ✨ Fitur Utama
+
+### 🧬 Sistem Karakter
+- **7 Ras berbeda**: Elf, Dwarf, Demon, Human, Halfling, Tiefling, Dragonborn
+- **8 Kelas/Job**: Warrior, Archer, Mage, Rogue, Cleric, Paladin, Bard, Blacksmith
+- **Stat System**: STR, AGI, VIT, INT, DEX, LUK, TEC, MEN, CRT
+- **Pertumbuhan Karakter**: Leveling, EXP, Skill Points allocation
+- **Derived Stats**: ATK, MATK, DEF, MDEF, HP, MP, CRIT chance
+
+### ⚔️ Sistem Pertarungan
+- **Turn-based Combat**: Pemain vs Monster
+- **Skill System**: Berbagai skill berdasarkan kelas
+- **Item Usage**: Potions, buffs, dan consumables
+- **Loot System**: Turun dari monster yang dikalahkan
+- **Status Effects**: Poison, Burn, Freeze, dan status lainnya
+- **Critical Hit**: Perhitungan kerusakan kritis berdasarkan stat
+
+### 🗺️ Sistem Eksplorasi
+- **44+ Lokasi**: Dari hutan mistis hingga gunung naga
+- **Monster Lokal**: Setiap lokasi punya monster unik
+- **World State**: Dunia yang berubah sesuai aksi pemain
+- **World Events**: Event global yang mempengaruhi semua pemain
+
+### 📜 Sistem Quest
+- **Quest Board**: Di Guild untuk menerima misi
+- **Quest Paths**: Pilihan cabang quest yang berbeda
+- **Rewards**: Gold, EXP, items, reputasi
+- **Progress Tracking**: Lacak progress quest aktif
+
+### 💼 Sistem Inventory
+- **Weight System**: Setiap item punya berat maksimal sesuai stat
+- **Equipment Management**: Equip/unequip senjata dan armor
+- **Crafting System**: Buat item di station khusus
+- **Recipe System**: Resep crafting dengan material requirements
+
+### 👥 Sistem Sosial
+- **Party System**: Bentuk party bersama pemain lain
+- **Companion Recruitment**: Rekrut NPC sebagai pendamping
+- **Reputation System**: Reputasi dengan berbagai faction
+- **Achievements**: Unlock milestone melalui gameplay
+- **Story Events**: Event cerita personal berdasarkan karakter
+
+### 💾 Penyimpanan Data
+- **Firebase Integration**: Penyimpanan cloud dengan Firestore
+- **In-Memory Fallback**: Mode offline jika Firebase tidak tersedia
+- **Persistent Storage**: Data karakter tersimpan permanen
+- **Real-time Sync**: Data tersinkronisasi antar sesi
+
+## 🔧 Prasyarat
+
+Sebelum memulai, pastikan Anda memiliki:
+
+- **Node.js 18.0+** - Runtime JavaScript
+- **npm 9.0+** - Package manager
+- **Discord Bot Token** - Dari Discord Developer Portal
+- **Firebase Project** - Untuk penyimpanan data (opsional, ada fallback in-memory)
+- **Git** - Untuk clone repository (opsional)
+
+## 📦 Instalasi
+
+### 1. Clone Repository
+
 ```bash
 git clone https://github.com/yourusername/botetherial.git
 cd botetherial
 ```
 
-2. **Install dependencies**
+### 2. Install Dependencies
+
 ```bash
 npm install
 ```
 
-3. **Configure the bot**
-```bash
-# Edit config.json with your settings
-# Set DISCORD_BOT_TOKEN in environment or config.json
-```
+Dependencies utama:
+- **discord.js** (^14.16.3) - Discord Bot Framework
+- **firebase-admin** (^12.7.0) - Firebase Admin SDK
+- **dotenv** (^16.4.5) - Environment variables management
 
-4. **Set up Firebase credentials**
-- Download Firebase service account JSON
-- Place it as `etherial-fantasy-firebase-adminsdk-fbsvc-*.json` in project root
-- Or set `GOOGLE_APPLICATION_CREDENTIALS` environment variable
+### 3. Setup Konfigurasi
 
-5. **Run the bot**
-```bash
-# Development
-npm start
+Buat file `config.json` di root directory:
 
-# Or directly
-node src/index.js
-```
-
-The bot should output when Discord is available: `Bot ready as EtherialFantasy#XXXX — prefix=!`
-
-## Configuration 📋
-
-### config.json
 ```json
 {
-  "token": "YOUR_DISCORD_BOT_TOKEN",
+  "token": "YOUR_DISCORD_BOT_TOKEN_HERE",
   "prefix": "!"
 }
 ```
 
-### Environment Variables (.env)
+Atau gunakan file `.env`:
+
 ```
-DISCORD_BOT_TOKEN=your_token
+DISCORD_BOT_TOKEN=your_token_here
 GOOGLE_APPLICATION_CREDENTIALS=./etherial-fantasy-firebase-adminsdk-fbsvc-*.json
 ```
 
-The bot uses **Firestore** for data persistence with automatic in-memory fallback when Firebase is unavailable.
+## ⚙️ Konfigurasi
 
-## Discord Commands 🎮
+### File Konfigurasi
 
-### Character Management
-- `!createchar <race> <name>` - Create a new character
-- `!profile` - View your character profile
-- `!stats` - View detailed character stats
-- `!changejob <job>` - Change your job
-- `!races` - List available races
-- `!jobs` - List available jobs
-- `!skills` - View your current skills
+**config.json** - Konfigurasi utama bot
+```json
+{
+  "token": "YOUR_BOT_TOKEN",
+  "prefix": "!",
+  "defaultPrefix": "!"
+}
+```
 
-### Exploration & Battle
-- `!map` - View the world map
-- `!travel <location>` - Travel to a location
-- `!explore <location>` - Explore and find encounters
-- `!battle` - Start a battle
-- `!attack [skill]` - Attack in battle
-- `!flee` - Flee from battle
-- `!loot <monster>` - Loot defeated monster
-- `!rest` - Rest to recover HP/MP
+### Variabel Lingkungan
 
-### Inventory & Shop
-- `!inventory` - View your inventory
-- `!equip <item>` - Equip an item
-- `!unequip <slot>` - Unequip an item
-- `!use <item>` - Use an item
-- `!shop` - View available items
-- `!buy <item> [qty]` - Buy items
+Buat file `.env` untuk development:
+```
+DISCORD_BOT_TOKEN=your_token
+NODE_ENV=development
+```
 
-### Quests & Party
-- `!questboard` - View active quests
-- `!acceptquest <id>` - Accept a quest
-- `!quests` - View your active quests
-- `!completequest <id>` - Complete a quest
-- `!party <create|join|leave|info|disband> [name]` - Manage parties
+Untuk production dengan Firebase:
+```
+DISCORD_BOT_TOKEN=your_token
+GOOGLE_APPLICATION_CREDENTIALS=/path/to/firebase-adminsdk.json
+```
 
-### Social & Progression
-- `!companions` - View your companions
-- `!recruit <name>` - Recruit a companion
-- `!story` - Trigger a story event
-- `!reputation [faction]` - View faction reputation
-- `!achievements` - View your achievements
+## 🚀 Menjalankan Bot
 
-### General
-- `!help` or `!commands` - View all commands
-- `!status` - Quick status check
+### Mode Development
 
-## Project Structure 📁
+```bash
+# Jalankan langsung
+node src/index.js
+
+# Atau gunakan npm script
+npm start
+```
+
+### Mode Production dengan PM2
+
+```bash
+# Install PM2 globally
+npm install -g pm2
+
+# Start bot dengan PM2
+pm2 start src/index.js --name "etherial-bot"
+
+# Lihat status
+pm2 status
+
+# Lihat logs real-time
+pm2 logs etherial-bot
+
+# Simpan agar restart otomatis
+pm2 save
+pm2 startup
+```
+
+### Mode Development dengan Watch
+
+```bash
+# Install nodemon
+npm install --save-dev nodemon
+
+# Run dengan auto-reload
+nodemon src/index.js
+```
+
+## 🎮 Perintah Bot
+
+Prefix default: `!`
+
+### 👤 Manajemen Karakter
+
+| Perintah | Penggunaan | Deskripsi |
+|----------|-----------|-----------|
+| `!createchar` | `!createchar <ras> <nama>` | Buat karakter baru |
+| `!profile` | `!profile` | Lihat profil karakter |
+| `!status` | `!status` | Status cepat (HP, level, gold) |
+| `!stats` | `!stats` | Lihat statistik detail |
+| `!statpoints` | `!statpoints` | Lihat stat points tersedia |
+| `!alloc` | `!alloc <stat> [jumlah]` | Alokasikan stat points |
+| `!races` | `!races` | Daftar ras tersedia |
+| `!jobs` | `!jobs` | Daftar kelas/job tersedia |
+
+### 🗺️ Eksplorasi & Lokasi
+
+| Perintah | Penggunaan | Deskripsi |
+|----------|-----------|-----------|
+| `!map` | `!map` | Tampilkan peta dunia |
+| `!travel` | `!travel <lokasi>` | Pindah ke lokasi lain |
+| `!cityhall` | `!cityhall` | Kota Utama - Pusat administrasi |
+| `!guild` | `!guild` | Guild Petualang - Menerima quest |
+| `!blacksmith` | `!blacksmith` | Pandai besi - Upgrade senjata |
+| `!alchemist` | `!alchemist` | Alkemis - Upgrade trinket |
+| `!tavern` | `!tavern` | Tavern - Istirahat & companion |
+| `!frontier` | `!frontier` | Pos Perbatasan - Perjalanan |
+
+### ⚔️ Pertarungan
+
+| Perintah | Penggunaan | Deskripsi |
+|----------|-----------|-----------|
+| `!startbattle` | `!startbattle` | Mulai pertarungan |
+| `!battle` | `!battle` | Cek status pertarungan |
+| `!attack` | `!attack` | Serang musuh |
+| `!flee` | `!flee` | Kabur dari pertarungan |
+| `!loot` | `!loot <monster>` | Lihat loot table monster |
+| `!bestiary` | `!bestiary [lokasi]` | Daftar monster di lokasi |
+
+### 💼 Inventory & Item
+
+| Perintah | Penggunaan | Deskripsi |
+|----------|-----------|-----------|
+| `!inventory` | `!inventory` | Lihat inventory |
+| `!equip` | `!equip <item>` | Pasang equipment |
+| `!unequip` | `!unequip <slot>` | Lepas equipment |
+| `!equipped` | `!equipped` | Lihat equipment aktif |
+| `!use` | `!use <item>` | Gunakan item consumable |
+| `!recipes` | `!recipes` | Daftar resep crafting |
+| `!craft` | `!craft <item> [qty]` | Buat item di station |
+| `!upgrade` | `!upgrade <item>` | Tingkatkan equipment |
+| `!shop` | `!shop` | Lihat toko lokasi |
+| `!buy` | `!buy <item> [qty]` | Beli item dari toko |
+
+### 📜 Quest & Misi
+
+| Perintah | Penggunaan | Deskripsi |
+|----------|-----------|-----------|
+| `!questboard` | `!questboard` | Lihat papan quest |
+| `!acceptquest` | `!acceptquest <nomor>` | Ambil quest |
+| `!questpath` | `!questpath <id> <branch>` | Pilih cabang quest |
+| `!quests` | `!quests` | Lihat quest aktif |
+| `!completequest` | `!completequest <id>` | Selesaikan quest |
+
+### 👥 Sosial & Party
+
+| Perintah | Penggunaan | Deskripsi |
+|----------|-----------|-----------|
+| `!party` | `!party <create\|join\|leave\|info\|disband>` | Kelola party |
+| `!companions` | `!companions` | Lihat companion |
+| `!recruit` | `!recruit <nama>` | Rekrut companion |
+| `!dismiss` | `!dismiss <nama>` | Lepas companion |
+| `!scene` | `!scene <aksi>` | Tampilkan adegan roleplay |
+| `!reputation` | `!reputation [faction]` | Lihat reputasi faction |
+| `!achievements` | `!achievements` | Lihat achievement |
+
+### ℹ️ Umum
+
+| Perintah | Penggunaan | Deskripsi |
+|----------|-----------|-----------|
+| `!help` | `!help` | Tampilkan bantuan lengkap |
+| `!commands` | `!commands` | Daftar semua perintah |
+| `!dbstatus` | `!dbstatus` | Status database |
+
+## 🎲 Sistem Permainan
+
+### Ras (Races) 🧬
+
+Setiap ras punya bonus stat unik:
+
+- **Elf** - Bonus AGI & DEX, cocok untuk Archer/Rogue
+- **Dwarf** - Bonus STR & VIT, cocok untuk Warrior
+- **Human** - Balanced, cocok untuk hybrid class
+- **Demon** - Bonus INT & WIS, cocok untuk Mage
+- **Halfling** - Bonus LUK & AGI
+- **Tiefling** - Bonus INT & CRT
+- **Dragonborn** - Bonus STR & HP
+
+### Kelas (Jobs) ⚔️
+
+Setiap kelas punya specialty dan stat growth:
+
+- **Warrior** - Damage tinggi, DEF tinggi
+- **Archer** - Cepat, AGI tinggi, CRIT tinggi
+- **Mage** - MATK tinggi, INT tinggi
+- **Rogue** - Sangat cepat, CRIT tinggi
+- **Cleric** - Healing, MDEF tinggi
+- **Paladin** - Tanker, DEF & MDEF tinggi
+- **Bard** - Support, WIS tinggi
+- **Blacksmith** - Crafting, TEC tinggi
+
+### Leveling System 📊
+
+- **Base Level**: Mulai dari 1
+- **EXP System**: Setiap kemenangan & quest beri EXP
+- **Level Cap**: 255 (dapat disesuaikan)
+- **Stat Points**: +5 setiap level untuk dialokasikan
+- **Skills**: Unlock berdasarkan level & job
+
+### Reputasi & Faction 🏆
+
+Tiga faction utama:
+- **Kingdom** - Pemerintah & order
+- **Merchant Guild** - Perdagangan & bisnis
+- **Dark Society** - Underground & quest tersembunyi
+
+Naik reputasi dengan menyelesaikan quest & membeli dari merchant.
+
+### Achievement 🏅
+
+Achievement categories:
+- **Combat**: Victory, Boss Kill, Streak
+- **Exploration**: Discovery, Locales
+- **Progression**: Level milestones
+- **Social**: Party formation, Recruitment
+- **Collection**: Items, Monsters
+
+## 📁 Struktur Proyek
 
 ```
 botetherial/
 ├── src/
-│   ├── bot.js                      # Discord.js bot runtime
-│   ├── index.js                    # Entry point
-│   ├── db.js                       # Firestore operations with fallback
-│   ├── stats.js                    # Character stat calculations
-│   ├── game-core.js                # Core game logic (catalogs, sessions, quests)
-│   ├── command-data.js             # Command payload builders
-│   ├── presentation.js             # Discord embed builders
-│   ├── check_users.js              # User validation
-│   └── test_stats.js               # Stats validation tests
-├── data/                           # Game data files
-│   ├── items.json                  # Item definitions
-│   ├── map.json                    # World map layout
-│   ├── monsters.json               # Monster definitions
-│   ├── recipes.json                # Crafting recipes
-│   ├── world_events.json           # World events
-│   └── ...
-├── config.json                     # Bot configuration
-├── package.json                    # Node.js dependencies
-├── etherial-fantasy-firebase-adminsdk-fbsvc-*.json  # Firebase credentials (not in git)
-├── races.json                      # Race definitions
-├── jobs.json                       # Job definitions
-├── starter_kits.json               # Starter kit definitions
-└── .gitignore                      # Git ignore rules
+│   ├── bot.js                    # Discord.js runtime & command handlers
+│   ├── index.js                  # Entry point
+│   ├── db.js                     # Firestore + fallback storage
+│   ├── stats.js                  # Sistem statistik karakter
+│   ├── game-core.js              # Core game logic & helpers
+│   ├── command-data.js           # Command payload builders
+│   ├── presentation.js           # Discord embed builders
+│   ├── check_users.js            # User validation
+│   └── test_stats.js             # Validation tests
+├── data/
+│   ├── items.json                # Item definitions
+│   ├── map.json                  # World map layout
+│   ├── monsters.json             # Monster definitions
+│   ├── recipes.json              # Crafting recipes
+│   └── world_events.json         # World events (opsional)
+├── config.json                   # Bot configuration
+├── package.json                  # Node.js dependencies
+├── races.json                    # Race definitions
+├── jobs.json                     # Job definitions
+├── starter_kits.json             # Starting kit definitions
+├── .gitignore                    # Git ignore rules
+├── README.md                     # Documentation (file ini)
+└── etherial-fantasy-firebase-*.json  # Firebase credentials (tidak di-commit)
 ```
 
-## Deployment 🚀
+### File Kunci
 
-### Deploy to Node.js Hosting
+- **src/bot.js** (600+ lines) - Semua command handlers Discord.js
+- **src/game-core.js** (900 lines) - Helper functions & catalogs
+- **src/stats.js** (260 lines) - Stat calculation formulas
+- **src/db.js** (220 lines) - Database persistence layer
 
-The bot can be deployed to any Node.js hosting platform:
+## 🔥 Setup Firebase
 
-- **Railway.app** - Easy deployment with GitHub integration
-- **Render.com** - Free tier available
-- **Fly.io** - Global deployment
-- **Heroku** - Using Procfile (not free anymore)
-- **VPS (AWS, DigitalOcean, Linode)** - Full control
-- **Replit** - Node.js runtime support
+### 1. Buat Firebase Project
 
-### General Deployment Steps
+1. Kunjungi [Firebase Console](https://console.firebase.google.com)
+2. Klik "Buat Proyek"
+3. Masukkan nama proyek (misal: "etherial-fantasy")
+4. Ikuti wizard setup
 
-1. **Prepare project**
-   - Ensure `package.json` and all files are committed
-   - Exclude `.env`, `node_modules`, and Firebase credentials from git
-   - Verify `.gitignore` is correct
+### 2. Buat Firestore Database
 
-2. **Set environment variables** on your hosting platform:
-   ```
-   DISCORD_BOT_TOKEN=your_token
-   GOOGLE_APPLICATION_CREDENTIALS=/path/to/firebase-adminsdk.json
-   ```
+1. Di Firebase Console, klik "Firestore Database"
+2. Klik "Buat Database"
+3. Pilih "Mode Pengembangan" (untuk testing)
+4. Pilih lokasi regional terdekat
 
-3. **Install and run**
+### 3. Generate Service Account Key
+
+1. Klik "Project Settings" ⚙️
+2. Tab "Service Accounts"
+3. Klik "Generate New Private Key"
+4. Simpan file sebagai `etherial-fantasy-firebase-adminsdk-fbsvc-*.json`
+5. **PENTING**: Tambahkan ke `.gitignore` agar tidak di-commit
+
+### 4. Setup Environment
+
+Atur environment variable atau edit config.json:
+
+```bash
+# Windows PowerShell
+$env:GOOGLE_APPLICATION_CREDENTIALS = "path/to/etherial-fantasy-firebase-adminsdk-fbsvc-*.json"
+npm start
+
+# Linux/macOS
+export GOOGLE_APPLICATION_CREDENTIALS="path/to/etherial-fantasy-firebase-adminsdk-fbsvc-*.json"
+npm start
+```
+
+### 5. Testing Koneksi
+
+Jalankan bot dan lihat logs:
+```
+✅ Firestore connected successfully
+✅ Bot ready as EtherialFantasy#XXXX
+```
+
+Jika tidak ada Firebase, bot akan mode fallback (in-memory):
+```
+⚠️ Using in-memory storage
+```
+
+## 🚀 Deployment
+
+### Deployment ke Railway.app (Rekomendasi)
+
+Railway adalah platform hosting yang mudah untuk bot Discord:
+
+1. **Kunjungi** https://railway.app
+2. **Login** dengan GitHub
+3. **Connect** repository GitHub Anda
+4. **Set Variables**:
+   - `DISCORD_BOT_TOKEN`: Token bot Anda
+   - `GOOGLE_APPLICATION_CREDENTIALS`: Upload Firebase JSON
+5. **Deploy** - Selesai!
+
+### Deployment ke Render.com
+
+1. Kunjungi https://render.com
+2. Create "Web Service"
+3. Connect GitHub repo
+4. Build command: `npm install`
+5. Start command: `npm start`
+6. Set environment variables
+7. Deploy
+
+### Deployment ke VPS (AWS, DigitalOcean, Linode)
+
+```bash
+# SSH ke server
+ssh user@your_server_ip
+
+# Clone repository
+git clone https://github.com/yourusername/botetherial.git
+cd botetherial
+
+# Install Node.js & npm
+curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
+sudo apt-get install -y nodejs
+
+# Install dependencies
+npm install
+
+# Setup PM2
+npm install -g pm2
+pm2 start src/index.js --name "etherial-bot"
+pm2 save
+pm2 startup
+
+# Setup auto-restart on reboot
+sudo systemctl enable pm2-root
+```
+
+### Monitoring
+
+Gunakan PM2 untuk monitoring:
+
+```bash
+# Dashboard
+pm2 monit
+
+# Logs
+pm2 logs etherial-bot
+
+# Restart
+pm2 restart etherial-bot
+
+# Stop
+pm2 stop etherial-bot
+```
+
+## 🔧 Troubleshooting
+
+### Bot Tidak Start
+
+**Error: "Tidak ada token di config.json"**
+
+Solusi:
+1. Pastikan file `config.json` ada di root directory
+2. Cek format JSON valid
+3. Masukkan bot token yang benar
+
+```json
+{
+  "token": "YOUR_TOKEN_HERE",
+  "prefix": "!"
+}
+```
+
+### Firebase Connection Failed
+
+**Error: "GOOGLE_APPLICATION_CREDENTIALS not set"**
+
+Solusi:
+1. Pastikan Firebase adminsdk JSON ada
+2. Set environment variable dengan benar
+3. Bot akan fallback ke in-memory storage
+
+```bash
+# Test koneksi
+node -e "console.log(process.env.GOOGLE_APPLICATION_CREDENTIALS)"
+```
+
+### Bot Memori Tinggi
+
+Solusi:
+1. Periksa jumlah session active: `!dbstatus`
+2. Gunakan PM2 dengan memory limit: `pm2 start src/index.js --max-memory-restart 500M`
+3. Bersihkan cache lama dari Firestore
+
+### Commands Tidak Merespons
+
+**Error: "Commands not working"**
+
+Solusi:
+1. Pastikan bot punya permission "Send Messages" di server
+2. Cek prefix yang digunakan (default: `!`)
+3. Ensure bot has "Message Content Intent" enabled di Developer Portal
+4. Lihat logs: `pm2 logs etherial-bot`
+
+### Firestore Quota Exceeded
+
+Jika melebihi free tier quota Firestore:
+1. Upgrade Firebase Plan
+2. Atau hapus data lama dari Firestore
+3. Implementasi caching layer
+
+## 📚 Dokumentasi Lanjutan
+
+### Menambah Lokasi Baru
+
+Edit `data/map.json`:
+
+```json
+{
+  "lokasi_baru": {
+    "name": "Lokasi Baru",
+    "description": "Deskripsi lokasi",
+    "region": "Region Name",
+    "npcs": [],
+    "services": ["shop", "inn"]
+  }
+}
+```
+
+### Menambah Item Baru
+
+Edit `data/items.json`:
+
+```json
+{
+  "item_name": {
+    "name": "Item Name",
+    "description": "Item description",
+    "type": "weapon|armor|consumable",
+    "price": 100,
+    "weight": 5,
+    "rarity": "common|uncommon|rare|epic"
+  }
+}
+```
+
+### Menambah Monster Baru
+
+Edit `data/monsters.json`:
+
+```json
+{
+  "lokasi_name": [
+    {
+      "name": "Monster Name",
+      "hp": 50,
+      "atk": 15,
+      "loot": ["item1", "item2"]
+    }
+  ]
+}
+```
+
+### Modifikasi Stat Formula
+
+Edit `src/stats.js` - Fungsi `calculateDerivedStats()`:
+
+```javascript
+function calculateDerivedStats(baseStats, level, bonuses) {
+  // Modify formula sesuai kebutuhan
+  const atk = (baseStats.str || 10) * 1.5 + bonuses.atk;
+  // ...
+}
+```
+
+## 🤝 Berkontribusi
+
+Kontribusi sangat diterima! Berikut langkahnya:
+
+1. **Fork repository** - Klik tombol Fork di GitHub
+2. **Clone repo lokal**:
    ```bash
-   npm install
-   npm start
+   git clone https://github.com/yourusername/botetherial.git
    ```
+3. **Buat feature branch**:
+   ```bash
+   git checkout -b feature/amazing-feature
+   ```
+4. **Commit changes**:
+   ```bash
+   git commit -m "Add amazing feature"
+   ```
+5. **Push ke branch**:
+   ```bash
+   git push origin feature/amazing-feature
+   ```
+6. **Buka Pull Request** di GitHub
 
-4. **Firebase credentials**
-   - Upload your Firebase service account JSON to the hosting platform
-   - Or use the platform's secrets/environment management
+### Guidelines Kontribusi
 
-## Development 💻
+- Ikuti kode style yang ada
+- Tambahkan test untuk fitur baru
+- Update documentation
+- Pastikan semua tests pass: `npm test`
+- Jangan commit file sensitif (tokens, credentials)
 
-### Adding New Features
+## 📄 Lisensi
 
-1. Create new command handler in `src/bot.js`
-2. Add payload builder in `src/command-data.js` if needed
-3. Update game data in `data/` JSON files if needed
-4. Test locally with `npm start` or `node src/index.js`
-5. Update `README.md` with new commands
-6. Commit and push to GitHub
+Proyek ini adalah open source. Pastikan credentials Firebase **TIDAK PERNAH** di-commit ke GitHub.
 
-### Code Style
-- Follow JavaScript conventions (consistent indentation, descriptive names)
-- Use async/await for async operations
-- Add JSDoc comments for functions
-- Test changes before committing
+## 📞 Support & Komunitas
 
-## Firebase Setup 🔥
+- **Lapor Bug** - Buka issue di GitHub
+- **Request Fitur** - Diskusi di GitHub Discussions
+- **Discord Community** - Bergabung dengan server Etherial Fantasy
+- **Documentation** - Baca README ini atau buka wiki
 
-1. **Create Firebase Project**
-   - Go to https://console.firebase.google.com
-   - Create a new project
+## 🎉 Terima Kasih!
 
-2. **Enable Firestore Database**
-   - Create a Firestore Database
-   - Set security rules (or use development mode for testing)
+Terima kasih telah menggunakan **Etherial Fantasy Bot**! 
 
-3. **Generate Service Account Key**
-   - Go to Project Settings → Service Accounts
-   - Click "Generate New Private Key"
-   - Save as `etherial-fantasy-firebase-adminsdk-fbsvc-*.json`
-   - **IMPORTANT**: Add to `.gitignore` (never commit credentials)
-
-4. **Update Configuration**
-   - Set `GOOGLE_APPLICATION_CREDENTIALS` to path of service account JSON
-   - Or place file in project root and let app auto-detect it
-
-5. **Fallback Mode**
-   - Bot works without Firebase (uses in-memory storage)
-   - Data persists locally only during session
-   - Add Firebase credentials to enable persistent storage
-
-## Troubleshooting 🔧
-
-### Bot won't start
-- Check if bot token is valid in `config.json`
-- Ensure all dependencies are installed: `npm install`
-- Check `config.json` format is valid JSON
-- Verify Node.js version: `node --version` (need 18.0+)
-- Check for errors: `npm start` (shows detailed error messages)
-
-### Firebase connection fails
-- Check service account JSON is accessible
-- Verify Firestore database exists in Firebase project
-- Check internet connection
-- Bot will work in fallback mode without Firebase (data lost on restart)
-
-### Commands not working
-- Ensure bot has Message Content Intent enabled in Discord Developer Portal
-- Check bot permissions in Discord server settings
-- Verify command prefix is correct (default: `!`)
-- Ensure bot has permission to send messages
-
-### Discord.js not available
-- Install discord.js: `npm install discord.js`
-- Or check console output for fallback mode notice
-
-### Skills are limited
-- This is intentional! Characters get 1-3 random starting skills
-- More skills unlock through leveling and progression
-
-## Contributing 🤝
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit changes (`git commit -m 'Add amazing feature'`)
-4. Push to branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
-
-## License 📄
-
-This project is open source. Please ensure Firebase credentials are never committed.
-
-## Support & Community 💬
-
-- **GitHub Issues** - Report bugs or request features
-- **Discord** - Join our community server for support
-
-## Credits ✨
-
-- Built with [discord.js](https://discord.js.org/)
-- Data persistence with [Firebase Admin SDK](https://firebase.google.com/docs/firestore)
-- Game design and content for Etherial Fantasy RPG
+Jika Anda menyukai proyek ini:
+- ⭐ **Star** repository ini di GitHub
+- 🐛 **Report bugs** jika menemukan masalah
+- 💡 **Suggest features** untuk improvement
+- 🤝 **Contribute** dengan pull request
 
 ---
 
-**Important Security Notes:**
-- Never commit `config.json` with real bot tokens
-- Never commit Firebase service account JSON files
-- Always use `.gitignore` to protect sensitive credentials
-- Use environment variables or secure secret management for production
-- Rotate bot tokens if accidentally exposed
-
+**Last Updated**: May 10, 2026
+**Bot Version**: 2.0.0 (Node.js)
+**Status**: ✅ Production Ready
