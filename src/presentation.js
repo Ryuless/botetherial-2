@@ -12,7 +12,7 @@ const COLOR_ITEM = 0xFFD700;
 const COLOR_STAT = 0x3498DB;
 
 function createEmbed(title = "", description = "", color = COLOR_PRIMARY, authorName = null, authorIcon = null) {
-  const embed = { title, description, color, fields: [] };
+  const embed = { title, description, color, fields: [], timestamp: new Date().toISOString() };
   if (authorName) {
     embed.author = { name: authorName, icon_url: authorIcon || null };
   }
@@ -27,6 +27,12 @@ function addField(embed, name, value, inline = false) {
 
 function setFooter(embed, text, iconUrl = null) {
   embed.footer = { text, icon_url: iconUrl };
+  return embed;
+}
+
+function setThumbnail(embed, url) {
+  if (!embed) return embed;
+  embed.thumbnail = { url };
   return embed;
 }
 
@@ -67,5 +73,6 @@ module.exports = {
   setFooter,
   createMenuEmbed,
   addMenuItem,
+  setThumbnail,
   formatMenuFooter,
 };

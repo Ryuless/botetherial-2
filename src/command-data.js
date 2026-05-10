@@ -13,6 +13,8 @@ function helpPages() {
         ["createchar <race> <name>", "Buat atau ubah karakter"],
         ["profile", "Lihat profil karakter"],
         ["status", "Status karakter (HP, level, exp)"],
+        ["stats", "Lihat statistik detail"],
+        ["skills", "Lihat tier-0 skills yang dimiliki"],
         ["races", "Daftar ras tersedia"],
         ["jobs", "Daftar job/class tersedia"],
         ["racepowers", "Daftar ability ras kamu"],
@@ -120,18 +122,44 @@ function buildRaceCommandPayload() {
     presentation.COLOR_RACE,
     "🧬",
   );
+  const races = core.raceCatalog();
+  const raceList = Object.entries(races);
 
-  const raceList = Object.entries(core.raceCatalog());
-  for (const [raceName, data] of raceList) {
+  const emojiMap = {
+    human: "🧑",
+    elf: "🧝",
+    orc: "👹",
+    dwarf: "🛡️",
+    vampire: "🦇",
+    dragontamer: "🐉",
+    fairy: "🧚",
+    griffin: "🦅",
+    nymph: "🌿",
+    werewolf: "🐺",
+    pegasus: "🦄",
+    mermaid: "🧜",
+    angel: "😇",
+    demon: "😈",
+    bunny: "🐰",
+  };
+
+  // Use compact inline fields for nicer layout (Discord will arrange them in columns)
+  for (const [raceKey, data] of raceList) {
     const raceStats = data.base_stats || {};
-    const desc = data.description || "";
-    const statsText = `STR:${raceStats.str ?? 10} | AGI:${raceStats.agi ?? 10} | VIT:${raceStats.vit ?? 10}\nINT:${raceStats.int ?? 10} | WIS:${raceStats.wis ?? 10} | LUK:${raceStats.luk ?? 10}`;
+    const desc = (data.description || "").split(".")[0] || ""; // short description
+    const statsText = `STR ${raceStats.str ?? 10} • AGI ${raceStats.agi ?? 10} • VIT ${raceStats.vit ?? 10}`;
+    const statsText2 = `INT ${raceStats.int ?? 10} • DEX ${raceStats.dex ?? 10} • LUK ${raceStats.luk ?? 10}`;
     const trait = data.special_trait || "—";
-    const value = `${desc}\n\n\`\`${statsText}\`\`\`\n**Trait:** ${trait}`;
-    presentation.addMenuItem(embed, raceName, value, "⚔️", false);
+    const nameDisplay = (emojiMap[raceKey] || "⚔️") + "  " + (data.name || raceKey);
+    const value = `*${desc}*\n\n${statsText}\n${statsText2}\n**Trait:** ${trait}`;
+    // add as inline for compact 2-3 column layout
+    presentation.addMenuItem(embed, nameDisplay, value, "", true);
   }
 
-  presentation.setFooter(embed, `${presentation.formatMenuFooter(null, null, `Total: ${raceList.length} Ras`)}\n💡 Gunakan !createchar <ras> <nama> untuk membuat karakter`);
+  presentation.setFooter(
+    embed,
+    `${presentation.formatMenuFooter(null, null, `Total: ${raceList.length} Ras`)}\n💡 Gunakan !createchar <ras> <nama> untuk membuat karakter`,
+  );
   return embed;
 }
 
@@ -257,6 +285,36 @@ function buildStatsPayload(session) {
   }
 
   return stats.formatStatsDisplay(session);
+}
+
+function buildSkillsPayload(session) {
+  if (!session?.created) {
+    return presentation.createEmbed(
+      "❌ No Character",
+      `You haven't created a character yet.\nUse \`${core.cfg.prefix || "!"}createchar <race> <name>\` to create one.`,
+      0xE74C3C,
+    );
+  }
+
+  const embed = presentation.createMenuEmbed(
+    "⚡ Tier-0 Skills",
+    `Skill dari ras **${session.race}**`,
+    presentation.COLOR_SKILL,
+    "⚡",
+  );
+
+  const skills = session.tier0_race_skills || [];
+  if (skills.length === 0) {
+    presentation.addField(embed, "Tidak Ada Skill", "Belum ada skill yang di-roll. Recreate karakter atau hubungi admin.", false);
+  } else {
+    for (const skill of skills) {
+      const line = `**${skill.name}**\nDamage: ${skill.damage || 0} | Mana: ${skill.mana_cost || 0} | Type: ${skill.skill_type || 'Support'}\nElement: ${skill.element || 'None'} | Cast: ${skill.cast_time || 0}s | Duration: ${skill.duration || 0}s\n_${skill.description || 'Tidak ada deskripsi'}_`;
+      presentation.addField(embed, `\`${skill.id}\``, line, false);
+    }
+  }
+
+  presentation.setFooter(embed, `Total Skills: ${skills.length} | Upgrade tersedia di setiap level`);
+  return embed;
 }
 
 function buildMapPayload() {
@@ -710,6 +768,7 @@ module.exports = {
   buildStatPointsPayload,
   buildAllocPayload,
   buildStatsPayload,
+  buildSkillsPayload,
   buildMapPayload,
   buildTravelPayload,
   buildCityHallPayload,

@@ -30,6 +30,7 @@ const RECIPES = loadJson("recipes.json");
 const WORLD_EVENTS = loadJson("world_events.json");
 const RACES = loadJson("races.json", true);
 const JOBS = loadJson("jobs.json", true);
+const SKILLS = loadJson("skills.json");
 
 const FACTION_NAMES = [
   "Adventurer Guild",
@@ -210,6 +211,26 @@ function catalogFrom(data) {
 
 function raceCatalog() {
   return catalogFrom(RACES);
+}
+
+function skillCatalog() {
+  return catalogFrom(SKILLS);
+}
+
+function rollTier0SkillsForRace(raceKey, count = 4) {
+  const key = String(raceKey || "").toLowerCase();
+  const skillsByRace = skillCatalog();
+  const pool = skillsByRace[key] || [];
+  const pickCount = Math.max(0, Math.min(count, pool.length));
+  const picked = [];
+  const indices = new Set();
+  while (picked.length < pickCount) {
+    const idx = Math.floor(Math.random() * pool.length);
+    if (indices.has(idx)) continue;
+    indices.add(idx);
+    picked.push(structuredClone(pool[idx]));
+  }
+  return picked;
 }
 
 function jobCatalog() {
@@ -562,6 +583,17 @@ function ensureSession(session) {
     merged.sp = merged.sp ?? merged.max_sp;
   }
 
+  // Assign tier0 race skills on creation if missing
+  try {
+    if (merged.created && (!merged.tier0_race_skills || Object.keys(merged.tier0_race_skills || {}).length === 0)) {
+      const rolled = rollTier0SkillsForRace(merged.race, 4);
+      // store as array under tier0_race_skills
+      merged.tier0_race_skills = rolled;
+    }
+  } catch (e) {
+    // ignore
+  }
+
   return merged;
 }
 
@@ -877,4 +909,6 @@ module.exports = {
   tickWorldTurn,
   eventModifier,
   eventFlavor,
+  skillCatalog,
+  rollTier0SkillsForRace,
 };

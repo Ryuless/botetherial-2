@@ -95,6 +95,9 @@ async function handleCommand(message, command, args, config) {
   if (command === "stats") {
     return sendPayload(message, commandData.buildStatsPayload(session));
   }
+  if (command === "skills" || command === "listskills") {
+    return sendPayload(message, commandData.buildSkillsPayload(session));
+  }
   if (command === "map") {
     return sendPayload(message, commandData.buildMapPayload());
   }

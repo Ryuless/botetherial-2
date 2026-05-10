@@ -172,6 +172,59 @@ function getFirestoreStatus() {
   };
 }
 
+  async function seedSkillsAsync(skillsObj) {
+    if (!skillsObj || typeof skillsObj !== 'object') return false;
+    state.fallbackSkills = skillsObj;
+    if (state.useFirestore && state.worldDoc) {
+      try {
+        // store skills under meta/skills document
+        const client = state.worldDoc.firestore || null;
+        if (client) {
+          // using top-level client
+        }
+        await state.worldDoc.collection('assets').doc('skills').set({ skills: skillsObj });
+        return true;
+      } catch (error) {
+        console.error('Error seeding skills to Firestore:', error);
+        state.fallbackSkills = skillsObj;
+        return false;
+      }
+    }
+    return true;
+  }
+
+  async function getSkillsAsync() {
+    if (state.fallbackSkills && Object.keys(state.fallbackSkills).length > 0) {
+      return state.fallbackSkills;
+    }
+    if (state.useFirestore && state.worldDoc) {
+      try {
+        const doc = await state.worldDoc.collection('assets').doc('skills').get();
+        if (doc.exists) {
+          const data = doc.data();
+          if (data && data.skills) {
+            state.fallbackSkills = data.skills;
+            return data.skills;
+          }
+        }
+      } catch (error) {
+        console.error('Error loading skills from Firestore:', error);
+      }
+    }
+    // attempt to load from local file
+    try {
+      const skillsPath = path.join(path.resolve(__dirname, '..'), 'data', 'skills.json');
+      if (fs.existsSync(skillsPath)) {
+        const obj = JSON.parse(fs.readFileSync(skillsPath, 'utf8'));
+        state.fallbackSkills = obj;
+        return obj;
+      }
+    } catch (e) {
+      console.error('Error reading local skills.json', e);
+    }
+    return {};
+  }
+
 function getSessionsCollection() {
   return state.sessionsCol;
 }
@@ -199,5 +252,7 @@ module.exports = {
   getSessionsCollection,
   getWorldDoc,
   getFallbackSessions,
+  seedSkillsAsync,
+  getSkillsAsync,
   state,
 };
