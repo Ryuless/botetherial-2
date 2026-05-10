@@ -1,9 +1,0 @@
-{
-  "Health Potion": {"requires": {"Spirit Herb": 2, "Moon Salt": 1}, "station": "Alchemist", "output_qty": 1, "success_rate": 1.0},
-  "Mana Tonic": {"requires": {"Spirit Herb": 1, "Moon Salt": 2}, "station": "Alchemist", "output_qty": 1, "success_rate": 1.0},
-  "Ration Pack": {"requires": {"Spirit Herb": 1}, "station": "Kedai Petualang", "output_qty": 1, "success_rate": 1.0},
-  "Rusty Sword": {"requires": {"Monster Bone": 2, "Iron Ore": 2}, "station": "BlackSmith", "output_qty": 1, "success_rate": 1.0},
-  "Leather Armor": {"requires": {"Leather Pelt": 3, "Iron Ore": 1}, "station": "BlackSmith", "output_qty": 1, "success_rate": 1.0},
-  "Crystal Talisman": {"requires": {"Night Gem": 1, "Moon Salt": 1, "Ancient Relic": 1}, "station": "Alchemist", "output_qty": 1, "success_rate": 0.75},
-  "Guild Sigil": {"requires": {"Ancient Relic": 1, "Coin Pouch": 1}, "station": "Adventurer Guild", "output_qty": 1, "success_rate": 1.0}
-}
